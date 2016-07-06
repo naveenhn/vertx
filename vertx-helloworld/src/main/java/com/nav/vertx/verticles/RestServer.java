@@ -14,16 +14,38 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RestServer.
+ *
+ * @author naveen
+ */
+/**
+ * @author naveen
+ *
+ */
 /**
  * @author naveen
  *
  */
 public class RestServer extends AbstractVerticle {
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
+		//deploy verticle
 		Vertx.vertx().deployVerticle(new RestServer());
 	}
 	
+	/* (non-Javadoc)
+	 * @see io.vertx.core.AbstractVerticle#start()
+	 */
 	@Override
 	public void start() throws Exception {
 		super.start();
@@ -37,6 +59,11 @@ public class RestServer extends AbstractVerticle {
 	}
 	
 	
+	/**
+	 * Handle get user.
+	 *
+	 * @param routingContext the routing context
+	 */
 	private void handleGetUser(RoutingContext routingContext){
 		
 		 String userID = routingContext.request().getParam("userID");
@@ -56,6 +83,12 @@ public class RestServer extends AbstractVerticle {
 	}
 	
 	
+	
+	/**
+	 * Handle get users.
+	 *
+	 * @param routingContext the routing context
+	 */
 	private void handleGetUsers(RoutingContext routingContext){
 		
 		JsonArray usersArr = User.getUsers();

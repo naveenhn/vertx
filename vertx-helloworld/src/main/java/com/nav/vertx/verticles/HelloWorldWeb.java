@@ -19,6 +19,7 @@ public class HelloWorldWeb extends AbstractVerticle {
 	 */
 	public static void main(String[] args) {
 
+		//deploy the verticle 
 		 Vertx vertx = Vertx.vertx();
 		 vertx.deployVerticle(new HelloWorldWeb());
 		
@@ -35,7 +36,7 @@ public class HelloWorldWeb extends AbstractVerticle {
 			
 		});
 		
-		
+		//create a server to listen on 8080
 		vertx.createHttpServer().requestHandler(router::accept).listen(8080);
 	}
 

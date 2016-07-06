@@ -23,6 +23,7 @@ public class StaticServer extends AbstractVerticle{
 		super.start();
 		
 		Router router = Router.router(vertx);
+		//render all pages from the webroot folder- default!
 		router.route().handler(StaticHandler.create());
 		vertx.createHttpServer().requestHandler(router::accept).listen(8080);
 		
